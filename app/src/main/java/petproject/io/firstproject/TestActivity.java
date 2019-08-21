@@ -11,6 +11,7 @@ import android.widget.EditText;
 public class TestActivity extends AppCompatActivity {
 
     EditText nome;
+    EditText sobrenome;
     Button btn;
 
     @Override
@@ -18,12 +19,13 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        nome = (EditText) findViewById(R.id.etNome);
+        nome = (EditText) findViewById(R.id.etNome1);
+        sobrenome = (EditText) findViewById(R.id.etNome2);
         btn = (Button) findViewById(R.id.btnSaldar);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Salute("Olá " + nome.getText(), "Bem Vindo!");
+                Salute("Olá, " + nome.getText() + " " + sobrenome.getText(), "Bem Vindo!");
             }
         });
     }
